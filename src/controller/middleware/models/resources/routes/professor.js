@@ -13,6 +13,7 @@ exports.postCriar - async (req,  res,  next) =>{
             await Cliente.criar (req.body);
             return res.json (professor);
      } catch (err) {
+         next (err);
 
     }
 }
