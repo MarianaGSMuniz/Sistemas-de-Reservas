@@ -11,8 +11,15 @@ app.set ('viwe engine', 'ejs');
 app.set ('views', 'views');
 
 //definindo arquivos estaticos
-const professor_route = require ('../src/routes/professor ');
 app.use (express.static ('public'));
+const professor_route = require ('../src/routes/professor ');
+
+//chamando rotas default
+app.user ('/', (req, res) =>{
+    return res.render ('login');
+    
+})
+
 
 //chamando rotas
 app.use ('/' ,(req, res) =>{
