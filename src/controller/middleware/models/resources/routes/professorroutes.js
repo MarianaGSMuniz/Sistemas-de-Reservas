@@ -1,5 +1,5 @@
 const Professorroutes = require ('../controller/professor');
-import express from "express";
+import modulo from 'express';
 const { ModuleResolutionKind } = require('typescript');
 const router = express.Router ();
 
