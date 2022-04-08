@@ -1,5 +1,5 @@
 const { isConstructorDeclaration } = require('typescript');
-const app = require ('./bin/indes');
+const app = require ('./bin/index');
 const keys = require ('./bin/keys');
 const connection = require ('./src/middleware/connection');
 

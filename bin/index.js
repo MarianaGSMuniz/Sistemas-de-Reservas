@@ -1,10 +1,15 @@
-const res = require("express/lib/response");
-const { app } = require("express/lib/response");
-const { ModuleResolutionKind } = require("typescript");
+const express = require ('express');
+const bp = require ('body-parser');
+
+const app = express ();
+// verificar essas funções
+const res = require("express/lib/response"); 
+const { app } = require("express/lib/response"); 
+const { ModuleResolutionKind } = require("typescript"); 
 
 //configurando o parser
 app.user (bp.json({limit: '10mb'}));
-app.user (bp.urLencoded({extendend: false}));
+app.user (bp.urlencoded({extendend: false}));
 
 //configurando o front
 app.set ('viwe engine', 'ejs');
