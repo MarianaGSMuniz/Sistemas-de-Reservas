@@ -6,10 +6,13 @@ const modelo = mongoose.model ('funcionarios');
 const cript = require ('bycript');
 const salt = 10;
 
-
 //metodo crud
 class funcionario {
         static async criar (dados) {
+            {
+                matricula: 202204,
+                senha: 'admin'
+            }
             let{ senha } = dados;
             const hash = await cript.has(senha, salt);
             senha= hash;

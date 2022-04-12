@@ -19,7 +19,10 @@ app.set ('views', 'views');
 app.use (express.static ('public') );
 
 const professor_route = require ('../src/routes/professor ');
+const funcionario_route=require ('../src/routes/funcionario');
+
 app.use (' /  professor', professor_route);
+app.use ('/ funcionario', funcionario_route);
 
 
 //chamando rotas default

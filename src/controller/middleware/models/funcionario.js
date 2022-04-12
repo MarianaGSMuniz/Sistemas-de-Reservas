@@ -5,10 +5,15 @@ smc.smc ('Funcionário', {
         required: true,
         unique: true,
     },
+    nome:{
+        type: String,
+        required: true,
+        trim: true,
+    },
     senha:{
         type: String,
         required: true,
-        trim: true
+        trim: true,
     }
 });
 module.exports = smc;
