@@ -14,7 +14,7 @@ exports.postCriar = async (req, res, next) =>{
     try{
             let resultado = await professor.validarRegistro (req.body);
             if (!resultado){ 
-            await Cliente.criar (req.body);
+            const cliente = await Cliente.criar (req.body);
            return res.json(cliente);
        } else {
            return  res.json (
