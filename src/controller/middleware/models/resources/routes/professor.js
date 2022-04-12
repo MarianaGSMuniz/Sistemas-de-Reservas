@@ -1,6 +1,6 @@
 const Professor = require ('../resources/professor');
 
-exports.getCriar - asnyc (req,  res,  next) => {
+exports.getCriar - asnyc (req,  res,  next)  => {
     try {
         return res.send('oi aqui resendizo o cadastro do professor');
     } catch (err) { 
@@ -8,7 +8,7 @@ exports.getCriar - asnyc (req,  res,  next) => {
 
       }
 }
-exports.postCriar - async (req,  res,  next) =>{
+exports.postCriar - async (req,  res,  next)  => {
     try{
             await Cliente.criar (req.body);
             return res.json (professor);

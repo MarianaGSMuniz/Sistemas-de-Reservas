@@ -24,7 +24,7 @@ app.use (' /  professor', professor_route);
 
 //chamando rotas default
 app.use ('/' ,(req, res) =>{
-        return res.render ('login');
+        return res.send (' Bem Vindo');
 
 });
 

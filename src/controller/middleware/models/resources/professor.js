@@ -27,7 +27,7 @@ class professor {
             }
             static async validarRegistro (dados){
                 let{ email} = dados;
-                let professor = await professor.findOne({ email });
+                let professor = await modelo.findOne({ email });
                 return professor;
             }
 }

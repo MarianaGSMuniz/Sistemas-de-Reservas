@@ -13,7 +13,7 @@ try{
 exports.postCriar = async (req, res, next) =>{
     try{
             let resultado = await professor.validarRegistro (req.body);
-            if (!resultado)
+            if (!resultado){ 
             await Cliente.criar (req.body);
            return res.json(cliente);
        } else {
