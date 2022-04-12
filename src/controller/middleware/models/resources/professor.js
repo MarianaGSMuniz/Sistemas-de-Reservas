@@ -25,6 +25,9 @@ class professor {
             static async deletar (id){
                 return await modelo.findOneAndRemove(id);
             }
+            static async validarregistro (dados){
+
+            }
 }
 
 module.exports = professor;
