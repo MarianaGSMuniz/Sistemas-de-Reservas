@@ -4,7 +4,7 @@ const keys = require ('./bin/keys');
 const connection = require ('./src/middleware/connection');
 
 app.listen (keys.server.port,  ( ) => {
-    connection.connect( );
+    connection( );
     if(err){
         console.log ('==> [-]Erro na Aplicação');
     } else   console.log ('==> [+] Funcionando');
