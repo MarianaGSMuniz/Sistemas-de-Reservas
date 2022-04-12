@@ -17,9 +17,12 @@ app.set ('views', 'views');
 
 //definindo arquivos estaticos
 app.use (express.static ('public') );
-const professor_route = require ('../src/routes/professor ');
 
-//chamando rotas
+const professor_route = require ('../src/routes/professor ');
+app.use (' /  professor', professor_route);
+
+
+//chamando rotas default
 app.use ('/' ,(req, res) =>{
         return res.render ('login');
 

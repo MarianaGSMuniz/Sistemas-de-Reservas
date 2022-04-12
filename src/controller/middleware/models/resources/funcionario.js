@@ -1,4 +1,4 @@
-require('../funcionario');
+require('.../models/resources/funcionario');
 
 const mongoose = require ('mongoose');
 const modelo = mongoose.model ('funcionarios');

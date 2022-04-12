@@ -17,3 +17,12 @@ exports.postCriar - async (req,  res,  next) =>{
 
     }
 }
+exports.buscarTodos = async (req, res, next) => {
+    try{
+        const todos = await  Cliente.buscarTodos ();
+        return res.json (todos);
+    } catch (err) {
+        next (err);
+
+    }
+}

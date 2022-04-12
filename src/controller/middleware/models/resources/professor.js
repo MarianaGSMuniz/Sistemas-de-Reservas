@@ -1,4 +1,4 @@
-require('../models/professor');
+require('.../models/resoucers/professor');
 
 const mongoose = require ('mongoose');
 const modelo = mongoose.model ('professor');
@@ -11,7 +11,7 @@ class professor {
             }
             
             static async buscarTodos ( ){
-                return await modelo.find( { });
+                return await modelo.find( {} );
 
             }
 
