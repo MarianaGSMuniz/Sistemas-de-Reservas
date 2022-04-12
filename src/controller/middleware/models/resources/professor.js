@@ -2,10 +2,12 @@ require('../models/professor');
 
 const mongoose = require ('mongoose');
 const modelo = mongoose.model ('professor');
+const cript = require ('bcrypt');
+
 //metodo crud
 class professor {
         static async criar (dados) {
-                return await new modelo (dados).save();
+                            return await new modelo (dados).save();
             }
             
             static async buscarTodos ( ){

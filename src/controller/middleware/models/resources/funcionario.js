@@ -20,7 +20,7 @@ class funcionario {
             
             static async autenticar (){
                 const { matricula } = dados;
-                cosnt funcionario = await modelo.findOne({matricula});
+                const funcionario = await modelo.findOne({matricula});
             return funcionario;
              }
 
