@@ -10,6 +10,21 @@ exports.getCriar - async (req, res, next) => {
             next(err);
         }
 }
+exports.getLogar = async (req, res,next) =>{
+    try {
+        return res.send ('pagina de login');
+        } catch (err){
+            next(err);
+
+}
+
+exports.postLogar = async (req, res, next) =>{
+    try {
+        return res.send ('');
+        } catch (err){
+            next(err);
+    
+}
 
 exports.postCriar = async (req, res, next) =>{
     try{
