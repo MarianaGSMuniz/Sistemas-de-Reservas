@@ -25,8 +25,10 @@ class professor {
             static async deletar (id){
                 return await modelo.findOneAndRemove(id);
             }
-            static async validarregistro (dados){
-
+            static async validarRegistro (dados){
+                let{ email} = dados;
+                let professor = await professor.findOne({ email });
+                return professor;
             }
 }
 

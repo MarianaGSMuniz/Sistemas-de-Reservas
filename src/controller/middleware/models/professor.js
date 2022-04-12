@@ -5,6 +5,12 @@ smc.smc('professor', {
         required: true,
         trim: trim
     }
+    ,email: {
+        type : String,
+        required: true,
+        trim: trim
+
+    }
     ,numdasala :{
         type: String,
         requeired: true

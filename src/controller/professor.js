@@ -1,4 +1,6 @@
+const { servicesVersion } = require('typescript');
 const Cliente = require ('../resources/professor');
+const professor = require('./middleware/models/resources/professor');
 
 exports.getCriar = async (req, res, next) =>{
 try{
@@ -10,10 +12,27 @@ try{
 
 exports.postCriar = async (req, res, next) =>{
     try{
-            const professor = await professor.Criar(req.body);
-            return res.json(cliente);
-    } catch (err) {
+            let resultado = await professor.validarRegistro (req.body);
+            if (!resultado)
+            await Cliente.criar (req.body);
+           return res.json(cliente);
+       } else {
+           return  res.json (
+               {
+                   error: 'Professor já agendou!'
+                   }
+                   );
+       }
+            catch (err) {
         next(err);
 
     }
+}
+exports.buscarTodos = async (req, res, next) =>{
+    try{
+        const todos = await Cliente.buscarTodos( );
+        return res.json (todos);
+     }catch (err){
+         next (err);
+     }
 }
