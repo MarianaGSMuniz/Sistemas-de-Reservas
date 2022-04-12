@@ -1,4 +1,4 @@
-require('../professor');
+require('../models/professor');
 
 const mongoose = require ('mongoose');
 const modelo = mongoose.model ('professor');
@@ -18,7 +18,7 @@ class professor {
 
             }
             static async atualizar (id, dados){
-                return await modelo.findOneAndUpdateid( id, {$set: dados});
+                return await modelo.findOneAndUpdate( id, {$set: dados});
             }
             static async deletar (id){
                 return await modelo.findOneAndRemove(id);
