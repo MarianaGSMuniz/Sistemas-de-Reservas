@@ -6,11 +6,13 @@ const auth = require ('../middleware/auth');
 
 
 router.get(' / ', Funcionario.getCriar);
-router.get(' / todos', auth.autorizar,  Funcionario.buscarTodos);
-router.get('/ logar', Funcionario.getLogar);
 router.post(' / ', Funcionario.postCriar);
+
+router.get('/ logar', Funcionario.getLogar);
 router.post ('/logar', Funcionario.postLogar);
 
+router.get('/ deslogar ', Funcionario.getdeslogar)
+router.get(' / todos', auth.autorizar,  Funcionario.buscarTodos);
 module.exports = router;
 
 

@@ -41,6 +41,20 @@ exports.postLogar = async (req, res, next) =>{
     
 }
 
+exports.deslogar =  (req, res)=>{
+    try{
+      await  storage.removeLocal('login');
+      return res.json (
+          {
+              Success: 'Deslogado com sucesso'
+          }
+      )
+    }catch (err){
+        next (err);
+    }
+
+}
+
 exports.postCriar = async (req, res, next) =>{
     try{
            let resultado = await funcionario.validarRegistro( );
