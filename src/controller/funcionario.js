@@ -1,7 +1,10 @@
 const res = require('express/lib/response');
 const { servicesVersion } = require('typescript');
 const funcionario = require ('../resources/funcionario');
-const cript = require ('bcryptjs');
+const cript = require ('bcrypt');
+const auth = require ('../middleware/auth');
+const storage = require ('localtoken');
+
 
 //fazer registro do funcionario
 exports.getCriar - async (req, res, next) => {
@@ -26,8 +29,13 @@ exports.postLogar = async (req, res, next) =>{
                 return res.send ('Usúario não encontrado');
             }
             if (!await cript.compare(req.body.senha, resultado.senha)){
-                
+                return res.send ('Senha errada');
+
             }
+            const token = await auth.gerarToken ( { resultado});
+            storage.setInLocal('login',token);
+            console.log ('usuario logado com sucesso');
+            return res.redirect ('/');
                     } catch (err){
             next(err);
     
