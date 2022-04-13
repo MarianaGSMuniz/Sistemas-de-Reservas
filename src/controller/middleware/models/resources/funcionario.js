@@ -26,6 +26,10 @@ class funcionario {
                 const funcionario = await modelo.findOne({matricula});
             return funcionario;
              }
+             static async validarEntrada (){
+                const { matricula, senha } = dados;
+                const funcionario = await modelo.findOne({matricula, senha});
+            return funcionario;
 
             static async buscarTodos ( ){
                 return await modelo.find( { });

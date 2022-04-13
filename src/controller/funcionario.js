@@ -1,6 +1,7 @@
 const res = require('express/lib/response');
 const { servicesVersion } = require('typescript');
 const funcionario = require ('../resources/funcionario');
+const cript = require ('bcryptjs');
 
 //fazer registro do funcionario
 exports.getCriar - async (req, res, next) => {
@@ -20,8 +21,14 @@ exports.getLogar = async (req, res,next) =>{
 
 exports.postLogar = async (req, res, next) =>{
     try {
-        return res.send ('');
-        } catch (err){
+            const resultado = await Funcionario.validarEntrada(req.body);
+            if(!resultado){
+                return res.send ('Usúario não encontrado');
+            }
+            if (!await cript.compare(req.body.senha, resultado.senha)){
+                
+            }
+                    } catch (err){
             next(err);
     
 }
